@@ -42,9 +42,9 @@ export const createPost = async(data: Post) => {
         revalidatePath('/posts')
 
         const json = await res.json();
-        console.log(json);
         return json;
     }catch(e){
         throw new Error(`${e}`)
     }
 }
+
