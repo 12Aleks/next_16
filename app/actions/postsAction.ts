@@ -48,6 +48,7 @@ export const createPost = async (data: Post) => {
     }
 }
 
+//with new refresh()
 export async function addPost(formData: FormData) {
     try {
         const title = formData.get("title") as string
@@ -66,7 +67,8 @@ export async function addPost(formData: FormData) {
             })
         });
 
-        refresh();
+        refresh(); 
+        
     } catch (e) {
         throw new Error('Data isnt send')
     }

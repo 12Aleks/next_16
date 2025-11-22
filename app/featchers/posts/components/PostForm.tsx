@@ -3,6 +3,8 @@ import {useActionState} from 'react';
 import Form from 'next/form'
 import {createPost} from "@/actions/postsAction";
 
+
+
 const PostForm = () => {
     const [state, formAction, isPending] = useActionState(sendData, { message: '' });
 
@@ -14,14 +16,17 @@ const PostForm = () => {
             return { message: 'Title and description are required.' };
         }
 
-        await createPost({
-            title: title,
+        const newPost = {
+            title,
             body: description,
             userId: 1,
             id: Math.floor(Math.random() * 1000000),
-        });
+        }
 
-        return { message: `Post "${title}" added successfully, if you can be use database ;)!` };
+        await createPost(newPost);
+
+
+        return { message: `Post "${title}" added successfully, if you can be use real database ;)!` };
     }
 
     return (
@@ -35,7 +40,7 @@ const PostForm = () => {
                 {isPending ? 'Submitting...' : 'Submit'}</button>
 
             {state.message && (
-                <p className="text-center text-sm mt-2 text-gray-600">{state.message}</p>
+                <p className="text-center text-sm mt-2 text-red-600">{state.message}</p>
             )}
         </Form>
     );

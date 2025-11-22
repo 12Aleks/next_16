@@ -19,12 +19,14 @@ const PostList = async () => {
 
     if (!posts || posts.length === 0) return <Loader />
 
+
+
     return (
         <div className="p-5 h-screen w-full flex flex-col items-center gap-x-4  ">
             <h1 className="text-2xl font-bold text-center text-amber-500 mb-4">Post list with react-virtual:</h1>
             <VirtualPostList posts={posts}/>
             <h2 className="text-xl font-bold text-center text-amber-500 mt-4">You can add new post:</h2>
-            <PostForm/>
+            <PostForm />
         </div>
     );
 };

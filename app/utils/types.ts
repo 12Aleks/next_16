@@ -6,3 +6,11 @@ export type Post = {
     title: string,
     body: string
 }
+
+export class ApiError extends Error {
+    status: number;
+    constructor(message: string, status: number) {
+        super(message);
+        this.status = status;
+    }
+}
