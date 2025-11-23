@@ -4,8 +4,9 @@ export type ProductItem = {
     fields: {
         title: string;
         slug: string;
-        description: Document;
-        image_product: {fields: {file: {url: string}}}
+        date: Date;
+        content: Document;
+        image_product: {fields: {file: {url: string}, title: string}};
     }
 }
 export type ProductItems = ReadonlyArray<ProductItem>;

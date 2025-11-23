@@ -10,7 +10,16 @@ const nextConfig: NextConfig = {
             revalidate: 1,
             expire: 5 * 60
         }
-    }
+    },
+    //for images from contentful
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: 'images.ctfassets.net',
+            },
+        ],
+    },
 };
 
 export default nextConfig;
