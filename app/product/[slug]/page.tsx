@@ -1,7 +1,6 @@
 "use cache"
 import {getProduct} from "@/lib/productsApi";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS } from '@contentful/rich-text-types';
 import Image from "next/image";
 import {Metadata, ResolvingMetadata} from "next";
 
